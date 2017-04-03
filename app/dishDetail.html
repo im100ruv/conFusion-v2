@@ -26,20 +26,20 @@
 <body>
 
     <div class="container">
-        <div class="row row-content" ng-controller="dishDetailController as dishDtlCtrl">
+        <div class="row row-content" ng-controller="DishDetailController as DishDtlCtrl">
             <div class="col-xs-12">
                 <div class="media">
                     <div class="media-left media-middle">
                         <a href="#">
                         <img class="media-object img-thumbnail"
-                         ng-src={{dishDtlCtrl.dish.image}} alt="Uthappizza">
+                         ng-src={{DishDtlCtrl.dish.image}} alt="Uthappizza">
                         </a>
                     </div>
                     <div class="media-body">
-                        <h2 class="media-heading">{{dishDtlCtrl.dish.name}}
-                         <span class="label label-danger">{{dishDtlCtrl.dish.label}}</span>
-                         <span class="badge">{{dishDtlCtrl.dish.price | currency}}</span></h2>
-                        <p>{{dishDtlCtrl.dish.description}}</p>
+                        <h2 class="media-heading">{{DishDtlCtrl.dish.name}}
+                         <span class="label label-danger">{{DishDtlCtrl.dish.label}}</span>
+                         <span class="badge">{{DishDtlCtrl.dish.price | currency}}</span></h2>
+                        <p>{{DishDtlCtrl.dish.description}}</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 </h4>
                 <div>
                     <ul class="list-unstyled">
-                        <li ng-repeat="comment in dishDtlCtrl.dish.comments | orderBy:myOrder">
+                        <li ng-repeat="comment in DishDtlCtrl.dish.comments | orderBy:myOrder">
                             <blockquote>
                               <p>{{comment.rating}} Stars </p>
                               <p>{{comment.comment}}</p>
@@ -69,7 +69,7 @@
 
         var app = angular.module('confusionApp',[]);
         
-        app.controller('dishDetailController', function() {
+        app.controller('DishDetailController', function() {
 
             var dish={
                           name:'Uthapizza',
