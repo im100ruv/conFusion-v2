@@ -36,21 +36,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/"><img src="images/logo.png" height=30 width=41></a>
+                <a class="navbar-brand" href="#!/"><img src="images/logo.png" height=30 width=41></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/">
+                    <li class="active"><a href="#!/">
                         <span class="glyphicon glyphicon-home"
                          aria-hidden="true"></span> Home</a></li>
-                    <li><a href="#/aboutus">
+                    <li><a href="#!/aboutus">
                         <span class="glyphicon glyphicon-info-sign"
                          aria-hidden="true"></span> About</a></li>
-                    <li><a href="#/menu">
+                    <li><a href="#!/menu">
                          <span class="glyphicon glyphicon-list-alt"
                          aria-hidden="true"></span> 
                          Menu</a></li>
-                     <li><a href="#/contactus">
+                     <li><a href="#!/contactus">
                      <i class="fa fa-envelope-o"></i> Contact</a></li>
                 </ul>
             </div>
@@ -78,9 +78,14 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> 
     
-    <ng-include src="'menu.html'"></ng-include>
+    <ng-view></ng-view>
+            <!--Chrome and some other browsers (except firefox) doesn't allow getting local files      over XHR. Its a security feature in chrome that doesn't allow CORS from files          stored on local hard drive while firefox currently does.
+            Best way is to run your app on a local server-->
+    
+            <!--In AngularJS, templates will be loaded via http request (AJAX). You must a have a server to do this. In Firefox it will work without server as well. If you want to implement without server, then include all your templates in index.html itself using <script type="text/ng-template" id="view/main.html"><p>This is main view</p></script>. This approach doesn't require any server.-->
+    
     
     <footer class="row-footer">
         <div class="container">
@@ -127,6 +132,7 @@
 
 <!-- build:js scripts/main.js -->
     <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers.js"></script>
     <script src="scripts/services.js"></script>
