@@ -20,4 +20,8 @@ Steps to run application
 
 3)Then in root directory of the project, run command: bower install
 	This will download all dependencies and components required to run the program.
-4)Open the index.html file in browser.
+	Also run command: npm install
+4)Serve the db.json file from json-server folder as : 
+	json-server --watch db.json
+5)Serve gulp files as : gulp watch
+	Your application is ready.
